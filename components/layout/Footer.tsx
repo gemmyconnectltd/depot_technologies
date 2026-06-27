@@ -16,24 +16,23 @@ const LINKS = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-white">
+    <footer className="bg-white border-t border-zinc-200">
       <div
         className={cn(
-          "mx-auto max-w-6xl px-6 py-12",
-          "grid grid-cols-1 gap-10 sm:grid-cols-3"
+          "mx-auto max-w-6xl px-6 py-14",
+          "grid grid-cols-1 gap-12 sm:grid-cols-3"
         )}
       >
-        {/* Brand */}
-        <div className="space-y-3">
+        <div className="space-y-4">
           <Link
             href="/"
             className="flex items-center gap-2.5"
             aria-label="Depot Technologies home"
           >
-            <span
+            <div
               className={cn(
                 "flex items-center justify-center",
-                "w-8 h-8 rounded-lg bg-white",
+                "w-9 h-9 rounded-xl bg-zinc-50",
                 "border border-zinc-200 shadow-sm"
               )}
             >
@@ -43,45 +42,40 @@ export default function Footer() {
                 width={24}
                 height={24}
               />
-            </span>
-            <span
-              className={cn(
-                "text-sm font-semibold tracking-tight",
-                "text-zinc-900"
-              )}
-            >
+            </div>
+            <span className="text-sm font-bold tracking-tight text-zinc-900">
               Depot Technologies
             </span>
           </Link>
-          <p
-            className={cn(
-              "text-sm leading-relaxed text-zinc-500"
-            )}
-          >
+          <p className="text-sm leading-relaxed text-zinc-500">
             Your trusted partner for quality materials —
-            stationery, electronics, and software solutions.
+            stationery, electronics, and software.
           </p>
+          {/* Three brand color accents */}
+          <div className="flex gap-1.5 pt-1">
+            <span className="w-8 h-1 rounded-full bg-stationery" />
+            <span className="w-8 h-1 rounded-full bg-electronics" />
+            <span className="w-8 h-1 rounded-full bg-software" />
+          </div>
         </div>
 
-        {/* Link groups */}
         {Object.entries(LINKS).map(([group, items]) => (
           <div key={group}>
             <p
               className={cn(
-                "mb-3 text-xs font-semibold",
-                "uppercase tracking-wider text-zinc-400"
+                "mb-4 text-xs font-bold uppercase",
+                "tracking-widest text-zinc-400"
               )}
             >
               {group}
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {items.map(({ label, href }) => (
                 <li key={href}>
                   <Link
                     href={href}
                     className={cn(
-                      "text-sm text-zinc-500",
-                      "hover:text-zinc-900",
+                      "text-sm text-zinc-500 hover:text-zinc-900",
                       "motion-safe:transition-colors duration-150"
                     )}
                   >

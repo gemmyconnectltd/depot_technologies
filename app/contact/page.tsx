@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/shared/PageHero";
+import PageHeader from "@/components/shared/PageHeader";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/contact/ContactForm";
 import { cn } from "@/lib/utils/cn";
 
 export const metadata: Metadata = {
   title: "Contact — Depot Technologies",
-  description:
-    "Get in touch. We respond within one business day.",
+  description: "Get in touch. We respond within one business day.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        label="Contact Us"
-        title="Let's talk about your material needs"
-        subtitle={
-          "Fill in the form and our team will get back "
-          + "to you within one business day."
-        }
+      <PageHeader
+        title="Contact Us"
+        subtitle="Fill in the form and our team will get back to you within one business day."
       />
       <section
         aria-label="Contact"
-        className="bg-zinc-50 py-20 px-6"
+        className="bg-zinc-50 py-12 px-6"
       >
         <div
           className={cn(

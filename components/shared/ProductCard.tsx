@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -8,6 +9,7 @@ interface ProductCardProps {
   iconColor: string;
   iconBg: string;
   tags?: string[];
+  slug?: string;
 }
 
 export default function ProductCard({
@@ -17,8 +19,9 @@ export default function ProductCard({
   iconColor,
   iconBg,
   tags,
+  slug,
 }: ProductCardProps) {
-  return (
+  const card = (
     <article
       className={cn(
         "flex flex-col gap-4 rounded-xl p-6",
@@ -71,4 +74,10 @@ export default function ProductCard({
       )}
     </article>
   );
+
+  if (slug) {
+    return <Link href={`/products/${slug}`}>{card}</Link>;
+  }
+
+  return card;
 }

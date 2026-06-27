@@ -1,40 +1,42 @@
-import { Target, Users, TrendingUp, Globe } from "lucide-react";
+import {
+  Target, Users, TrendingUp, Globe,
+} from "lucide-react";
 
 export const VALUES = [
   {
     icon: Target,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
     title: "Precision",
     body:
-      "Deliberate about what we stock and who "
-      + "we source from. Quality is non-negotiable.",
+      "We deliver exactly what you order, "
+      + "on time and to specification — every time.",
   },
   {
     icon: Users,
-    iconColor: "text-violet-600",
-    iconBg: "bg-violet-50",
+    iconColor: "text-software",
+    iconBg: "bg-software-light",
     title: "Partnership",
     body:
-      "We treat every client as a long-term partner, "
-      + "not a one-time transaction.",
+      "We work alongside your team to understand "
+      + "your workflow and supply needs deeply.",
   },
   {
     icon: TrendingUp,
-    iconColor: "text-sky-600",
-    iconBg: "bg-sky-50",
+    iconColor: "text-stationery",
+    iconBg: "bg-stationery-light",
     title: "Growth",
     body:
-      "We scale supply as your business grows — "
-      + "always ready for what comes next.",
+      "Our solutions scale with your business, "
+      + "from single orders to enterprise procurement.",
   },
   {
     icon: Globe,
-    iconColor: "text-indigo-600",
-    iconBg: "bg-indigo-50",
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
     title: "Reliability",
     body:
-      "Our clients trust us to deliver on time, "
-      + "every time — and we do.",
+      "A dependable supply chain you can count "
+      + "on, backed by real-time inventory tracking.",
   },
 ];

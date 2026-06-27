@@ -32,10 +32,7 @@ export default function AboutMission() {
           )}
         >
           <Image
-            src={
-              "https://images.unsplash.com/photo-1497366216548"
-              + "-37526070297c?w=800&q=80"
-            }
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85"
             alt="Modern office and warehouse operations"
             fill
             className="object-cover"

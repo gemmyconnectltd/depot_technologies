@@ -2,17 +2,58 @@
 
 :root {
   --background: #ffffff;
+  --surface:    #f4f4f5;
   --foreground: #18181b;
+  --muted:      #71717a;
+  --border:     #e4e4e7;
+
+  /* Stationery — amber, warm, tactile */
+  --stationery:       #d97706;
+  --stationery-light: #fffbeb;
+  --stationery-bar:   #f59e0b;
+
+  /* Electronics — blue, tech, precise */
+  --electronics:       #2563eb;
+  --electronics-light: #eff6ff;
+  --electronics-bar:   #3b82f6;
+
+  /* Software — violet, digital, modern */
+  --software:          #7c3aed;
+  --software-light:    #f5f3ff;
+  --software-bar:      #8b5cf6;
+
+  /* Primary CTA — blue */
+  --primary:       #2563eb;
+  --primary-hover: #1d4ed8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
+
+  --color-background:        var(--background);
+  --color-surface:           var(--surface);
+  --color-foreground:        var(--foreground);
+  --color-muted:             var(--muted);
+  --color-border:            var(--border);
+
+  --color-stationery:        var(--stationery);
+  --color-stationery-light:  var(--stationery-light);
+  --color-stationery-bar:    var(--stationery-bar);
+
+  --color-electronics:       var(--electronics);
+  --color-electronics-light: var(--electronics-light);
+  --color-electronics-bar:   var(--electronics-bar);
+
+  --color-software:          var(--software);
+  --color-software-light:    var(--software-light);
+  --color-software-bar:      var(--software-bar);
+
+  --color-primary:           var(--primary);
+  --color-primary-hover:     var(--primary-hover);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;

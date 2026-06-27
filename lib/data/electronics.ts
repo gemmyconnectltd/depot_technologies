@@ -1,95 +1,191 @@
 import {
-  Cpu,
-  Monitor,
-  Cable,
-  HardDrive,
-  Wifi,
-  Battery,
+  Printer, Camera, Headphones, Fan, Gamepad2,
+  Monitor, Cpu, Wifi, Battery, Scan,
+  Projector, Mouse, Cable, Car, Shield,
+  Smartphone,
 } from "lucide-react";
 
 export const ELECTRONICS_PRODUCTS = [
   {
-    name: "Computing Devices",
+    name: "Printers & POS",
     description:
-      "Laptops, desktops and workstations "
-      + "from top-tier manufacturers.",
-    icon: Monitor,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["Laptops", "Desktops", "Workstations"],
+      "Touch-screen POS terminals, thermal printers, "
+      + "and Epson printers for retail and office.",
+    icon: Printer,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["POS", "Thermal", "Epson", "Konika"],
     image:
-      "https://images.unsplash.com/photo-1496181133206"
-      + "-80ce9b88a853?w=600&q=80",
-    imageAlt: "Laptop computer on a desk",
+      "https://images.unsplash.com/photo-1612815154858"
+      + "-60aa9f0b4203?w=700&q=85",
+    imageAlt: "Printer and POS equipment",
   },
   {
-    name: "Processors & Components",
+    name: "Security Cameras",
     description:
-      "CPUs, GPUs, RAM and motherboards "
-      + "for custom builds and upgrades.",
-    icon: Cpu,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["CPUs", "GPUs", "RAM"],
+      "FOSVision cameras, smart AI cameras, solar "
+      + "cameras, and dual-lens security systems.",
+    icon: Camera,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["FOSVision", "Smart AI", "Solar", "Dual Lens"],
     image:
-      "https://images.unsplash.com/photo-1518770660439"
-      + "-4636190af475?w=600&q=80",
-    imageAlt: "Computer processor and components",
+      "https://images.unsplash.com/photo-1558002038"
+      + "-105b7b6775b5?w=700&q=85",
+    imageAlt: "Security camera system",
   },
   {
-    name: "Cables & Connectors",
+    name: "Headsets & Audio",
     description:
-      "HDMI, USB-C, Ethernet and power cables "
-      + "for every connectivity need.",
-    icon: Cable,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["HDMI", "USB-C", "Ethernet"],
+      "AirPods, JBL, Bose, Sony, and Marshall "
+      + "headphones for professional and personal use.",
+    icon: Headphones,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["AirPods", "JBL", "Bose", "Sony", "Marshall"],
     image:
-      "https://images.unsplash.com/photo-1558618666"
-      + "-fcd25c85cd64?w=600&q=80",
-    imageAlt: "Cables and connectors",
+      "https://images.unsplash.com/photo-1505740420928"
+      + "-5cb2f015d0fe?w=700&q=85",
+    imageAlt: "Premium headphones",
   },
   {
-    name: "Storage Solutions",
+    name: "Fans & Air Cooling",
     description:
-      "SSDs, HDDs and NAS drives for fast "
-      + "and reliable data storage.",
-    icon: HardDrive,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["SSD", "HDD", "NAS"],
+      "Gadery rechargeable fans, LED fans, air "
+      + "circulation fans, and handheld coolers.",
+    icon: Fan,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["Gadery", "Rechargeable", "LED", "Handheld"],
     image:
-      "https://images.unsplash.com/photo-1531492894831"
-      + "-48892e75c9e8?w=600&q=80",
-    imageAlt: "Hard drive storage device",
+      "https://images.unsplash.com/photo-1585771724684"
+      + "-d38262b18e6d?w=700&q=85",
+    imageAlt: "Electric fan and air cooler",
   },
   {
-    name: "Networking Hardware",
+    name: "Gaming Gadgets",
     description:
-      "Routers, switches and access points "
-      + "to build reliable networks.",
-    icon: Wifi,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["Routers", "Switches", "Access Points"],
+      "PlayStation consoles, controllers, game "
+      + "sticks, gaming keyboards, and projectors.",
+    icon: Gamepad2,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["PlayStation", "Controllers", "Gaming"],
     image:
-      "https://images.unsplash.com/photo-1544197150"
-      + "-58ab2b40e712?w=600&q=80",
-    imageAlt: "Network router and hardware",
+      "https://images.unsplash.com/photo-1593305841991"
+      + "-05d9b0c7b2d4?w=700&q=85",
+    imageAlt: "Gaming console and accessories",
   },
   {
-    name: "Power & UPS",
+    name: "Laptop Batteries",
     description:
-      "Power supplies, UPS units and surge "
-      + "protectors for uninterrupted uptime.",
+      "Replacement batteries for MacBook, HP EliteBook, "
+      + "Lenovo ThinkPad, and Dell laptops.",
     icon: Battery,
-    iconColor: "text-blue-600",
-    iconBg: "bg-blue-50",
-    tags: ["UPS", "PSU", "Surge Protectors"],
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["MacBook", "HP", "Lenovo", "Dell"],
     image:
-      "https://images.unsplash.com/photo-1619642751034"
-      + "-d5dc84a66b3d?w=600&q=80",
-    imageAlt: "Power supply unit",
+      "https://images.unsplash.com/photo-1597852074816"
+      + "-9cfa272dde8c?w=700&q=85",
+    imageAlt: "Laptop battery replacement",
+  },
+  {
+    name: "Videography & Lighting",
+    description:
+      "LED video lights, tripods, smartphone "
+      + "stabilizers, and photography accessories.",
+    icon: Monitor,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["LED Lights", "Tripods", "Stabilizers"],
+    image:
+      "https://images.unsplash.com/photo-1516035069371"
+      + "-e1be4c6e9e7a?w=700&q=85",
+    imageAlt: "Video lighting equipment",
+  },
+  {
+    name: "Cables & Chargers",
+    description:
+      "USB-C, MagSafe, laptop adapters, iPhone "
+      + "cables, and universal power accessories.",
+    icon: Cable,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["USB-C", "MagSafe", "Adapters"],
+    image:
+      "https://images.unsplash.com/photo-1516382799247"
+      + "-87df95d60097?w=700&q=85",
+    imageAlt: "Cables and charging accessories",
+  },
+  {
+    name: "Bill Counters & POS",
+    description:
+      "Duhan bill counting machines, currency "
+      + "detectors, and cash management tools.",
+    icon: Scan,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["Bill Counter", "Currency Detector"],
+    image:
+      "https://images.unsplash.com/photo-1591696205602"
+      + "-36f1a62a4a87?w=700&q=85",
+    imageAlt: "Bill counting machine",
+  },
+  {
+    name: "Projectors",
+    description:
+      "LCD and LED video projectors for home "
+      + "theatre, office, and classroom use.",
+    icon: Projector,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["LCD", "LED", "HD"],
+    image:
+      "https://images.unsplash.com/photo-1527864550417"
+      + "-7bb8d37c45f8?w=700&q=85",
+    imageAlt: "Video projector",
+  },
+  {
+    name: "Accessories",
+    description:
+      "Wireless mice, keyboards, laptop stands, "
+      + "power banks, screen protectors, and cases.",
+    icon: Mouse,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["Mouse", "Keyboard", "Stands", "Power Bank"],
+    image:
+      "https://images.unsplash.com/photo-1587829741301"
+      + "-d2f3a5e4a76d?w=700&q=85",
+    imageAlt: "Computer accessories",
+  },
+  {
+    name: "Car Tools",
+    description:
+      "Portable power stations, car wash machines, "
+      + "dash cameras, and repair tool kits.",
+    icon: Car,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["Power Station", "Dash Cam", "Car Wash"],
+    image:
+      "https://images.unsplash.com/photo-1487754180451"
+      + "-c0c3e9f7b1b5?w=700&q=85",
+    imageAlt: "Car tools and accessories",
+  },
+  {
+    name: "Aroma Diffusers",
+    description:
+      "Fireplace aroma diffusers, ultrasonic "
+      + "humidifiers, and essential oil accessories.",
+    icon: Shield,
+    iconColor: "text-electronics",
+    iconBg: "bg-electronics-light",
+    tags: ["Aroma", "Humidifier", "Essential Oils"],
+    image:
+      "https://images.unsplash.com/photo-1602928298849"
+      + "-513a76d1f1f7?w=700&q=85",
+    imageAlt: "Aroma diffuser",
   },
 ];

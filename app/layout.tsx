@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import AuthProvider from "@/components/providers/AuthProvider";
 import "./globals.css";
 
 const geist = Geist({
@@ -32,9 +33,11 @@ export default function RootLayout({
           + "bg-zinc-50 text-zinc-900"
         }
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
 interface PageHeroProps {
@@ -8,6 +9,8 @@ interface PageHeroProps {
   subtitle: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  image?: string;
+  imageAlt?: string;
 }
 
 export default function PageHero({
@@ -16,124 +19,127 @@ export default function PageHero({
   subtitle,
   primaryCta,
   secondaryCta,
+  image = "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=90",
+  imageAlt = "Technology background",
 }: PageHeroProps) {
   return (
     <section
       aria-label="Page hero"
       className={cn(
         "relative w-full overflow-hidden",
-        "py-24 px-6 sm:py-32",
-        "bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"
+        "min-h-[280px] flex items-center",
+        "bg-zinc-50"
       )}
     >
-      {/* Decorative grid */}
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute inset-0",
-          "bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]",
-          "bg-[size:48px_48px]"
-        )}
-      />
+      {/* Image — right half only */}
+      <div className="absolute inset-0 lg:left-[50%]">
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="50vw"
+        />
+        {/* Fade left edge into zinc-50 */}
+        <div
+          aria-hidden
+          className={cn(
+            "absolute inset-0",
+            "bg-gradient-to-r from-zinc-50 via-zinc-50/40 to-transparent"
+          )}
+        />
+      </div>
 
-      {/* Glow blobs */}
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute -top-32 -left-32",
-          "w-96 h-96 rounded-full",
-          "bg-blue-500/20 blur-3xl"
-        )}
-      />
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute -bottom-32 -right-32",
-          "w-96 h-96 rounded-full",
-          "bg-violet-500/20 blur-3xl"
-        )}
-      />
-
+      {/* Content */}
       <div
         className={cn(
-          "relative mx-auto max-w-3xl",
-          "text-center space-y-7"
+          "relative w-full mx-auto max-w-6xl",
+          "px-6 py-12 sm:py-16",
+          "grid lg:grid-cols-2"
         )}
       >
-        {label && (
-          <span
+        <div className="flex flex-col gap-6 max-w-lg">
+          {label && (
+            <span
+              className={cn(
+                "w-fit inline-flex items-center",
+                "px-3 py-1 rounded-full",
+                "bg-electronics-light border border-electronics/20",
+                "text-electronics text-xs font-bold uppercase tracking-widest"
+              )}
+            >
+              {label}
+            </span>
+          )}
+
+          <h1
             className={cn(
-              "inline-flex items-center px-3 py-1",
-              "rounded-full border border-blue-500/30",
-              "bg-blue-500/10 text-blue-300",
-              "text-xs font-semibold uppercase tracking-widest"
+              "text-3xl font-black tracking-tight",
+              "text-zinc-900 sm:text-4xl leading-[1.1]"
             )}
           >
-            {label}
-          </span>
-        )}
+            {title}
+          </h1>
 
-        <h1
-          className={cn(
-            "text-4xl font-bold tracking-tight",
-            "text-white sm:text-5xl lg:text-6xl"
+          <p className="text-base leading-relaxed text-zinc-500">
+            {subtitle}
+          </p>
+
+          {(primaryCta || secondaryCta) && (
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={cn(
+                    "inline-flex items-center gap-2",
+                    "px-6 py-3 rounded-lg",
+                    "bg-electronics text-white font-semibold",
+                    "hover:bg-electronics-bar",
+                    "shadow-lg shadow-electronics/20",
+                    "motion-safe:transition-all duration-150",
+                    "focus-visible:outline-none",
+                    "focus-visible:ring-2 focus-visible:ring-electronics"
+                  )}
+                >
+                  {primaryCta.label}
+                  <ArrowRight size={16} aria-hidden />
+                </Link>
+              )}
+              {secondaryCta && (
+                <Link
+                  href={secondaryCta.href}
+                  className={cn(
+                    "inline-flex items-center gap-2",
+                    "px-6 py-3 rounded-lg",
+                    "border border-zinc-300 text-zinc-700",
+                    "hover:bg-zinc-100",
+                    "motion-safe:transition-all duration-150",
+                    "focus-visible:outline-none",
+                    "focus-visible:ring-2 focus-visible:ring-zinc-400"
+                  )}
+                >
+                  {secondaryCta.label}
+                </Link>
+              )}
+            </div>
           )}
-        >
-          {title}
-        </h1>
 
-        <p
-          className={cn(
-            "text-lg leading-relaxed",
-            "text-slate-300 max-w-2xl mx-auto"
-          )}
-        >
-          {subtitle}
-        </p>
-
-        {(primaryCta || secondaryCta) && (
-          <div
-            className={cn(
-              "flex flex-col sm:flex-row",
-              "items-center justify-center gap-3 pt-2"
-            )}
-          >
-            {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className={cn(
-                  "inline-flex items-center gap-2",
-                  "px-6 py-3 rounded-lg",
-                  "bg-blue-600 text-white text-sm font-medium",
-                  "hover:bg-blue-500",
-                  "motion-safe:transition-colors duration-150",
-                  "focus-visible:outline-none",
-                  "focus-visible:ring-2 focus-visible:ring-blue-400"
-                )}
+          <div className="flex flex-wrap gap-5 pt-4 border-t border-zinc-200">
+            {[
+              { icon: ShieldCheck, text: "Certified Suppliers" },
+              { icon: Zap, text: "Fast Fulfilment" },
+            ].map(({ icon: Icon, text }) => (
+              <span
+                key={text}
+                className="flex items-center gap-1.5 text-xs text-zinc-500"
               >
-                {primaryCta.label}
-                <ArrowRight size={15} aria-hidden />
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className={cn(
-                  "inline-flex items-center gap-2",
-                  "px-6 py-3 rounded-lg",
-                  "border border-slate-600",
-                  "text-sm font-medium text-slate-300",
-                  "hover:border-slate-400 hover:text-white",
-                  "motion-safe:transition-colors duration-150",
-                  "focus-visible:outline-none",
-                  "focus-visible:ring-2 focus-visible:ring-slate-400"
-                )}
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
+                <Icon size={13} className="text-electronics" aria-hidden />
+                {text}
+              </span>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

@@ -17,27 +17,18 @@ export default function CTABanner({
     <section
       aria-label="Call to action"
       className={cn(
-        "relative w-full overflow-hidden py-24 px-6",
-        "bg-gradient-to-br from-blue-600 via-blue-700 to-violet-700"
+        "relative w-full overflow-hidden py-16 px-6",
+        "bg-gradient-to-br",
+        "from-electronics-light via-white to-software-light"
       )}
     >
-      {/* Grid overlay */}
+      {/* Subtle dot pattern */}
       <div
         aria-hidden
         className={cn(
           "pointer-events-none absolute inset-0",
-          "bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]",
-          "bg-[size:48px_48px]"
-        )}
-      />
-
-      {/* Glow */}
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute top-0 left-1/2 -translate-x-1/2",
-          "w-96 h-48 rounded-full",
-          "bg-white/10 blur-3xl"
+          "bg-[radial-gradient(circle,rgba(37,99,235,0.06)_1px,transparent_1px)]",
+          "bg-[size:32px_32px]"
         )}
       />
 
@@ -49,33 +40,30 @@ export default function CTABanner({
       >
         <h2
           className={cn(
-            "text-3xl font-bold tracking-tight",
-            "text-white sm:text-4xl"
+            "text-3xl font-black tracking-tight",
+            "text-zinc-900 sm:text-4xl"
           )}
         >
           {title}
         </h2>
-        <p
-          className={cn(
-            "text-base leading-relaxed text-blue-100"
-          )}
-        >
+        <p className="text-base leading-relaxed text-zinc-500">
           {subtitle}
         </p>
         <Link
           href={cta.href}
           className={cn(
             "inline-flex items-center gap-2",
-            "px-6 py-3 rounded-lg",
-            "bg-white text-blue-700 text-sm font-semibold",
-            "hover:bg-blue-50",
+            "px-7 py-3.5 rounded-lg",
+            "bg-electronics text-white font-semibold",
+            "hover:bg-electronics-bar",
+            "shadow-lg shadow-electronics/20",
             "motion-safe:transition-colors duration-150",
             "focus-visible:outline-none",
-            "focus-visible:ring-2 focus-visible:ring-white"
+            "focus-visible:ring-2 focus-visible:ring-electronics"
           )}
         >
           {cta.label}
-          <ArrowRight size={15} aria-hidden />
+          <ArrowRight size={16} aria-hidden />
         </Link>
       </div>
     </section>
