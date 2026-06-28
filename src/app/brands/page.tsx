@@ -15,7 +15,7 @@ export default async function BrandsPage() {
   const counts = await Promise.all(
     BRANDS.map(async (brand) => {
       const count = await prisma.product.count({
-        where: { brand: { equals: brand.name, mode: "insensitive" }, active: true },
+        where: { brand: brand.name, active: true },
       });
       return { slug: brand.slug, count };
     })

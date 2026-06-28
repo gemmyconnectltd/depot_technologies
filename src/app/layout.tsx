@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AuthProvider from "@/components/providers/AuthProvider";
+import ScrollToTop from "@/components/shared/ScrollToTop";
 import "./globals.css";
 
 const geist = Geist({
@@ -35,6 +36,7 @@ export default function RootLayout({
         }
       >
         <AuthProvider>
+          <ScrollToTop />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
