@@ -9,13 +9,6 @@ export const metadata: Metadata = {
   description: "Office supplies, thermal paper, barcode labels and printer supplies for every workspace.",
 };
 
-const SIDEBAR = [
-  { label: "All Products", href: "/products", value: null },
-  { label: "Electronics", href: "/electronics", value: "ELECTRONICS" },
-  { label: "Stationery", href: "/stationery", value: "STATIONERY" },
-  { label: "Software", href: "/software", value: "SOFTWARE" },
-] as const;
-
 export default function StationeryPage() {
   return (
     <>
@@ -32,7 +25,12 @@ export default function StationeryPage() {
           <aside className="hidden lg:block w-52 shrink-0">
             <h2 className="text-sm font-semibold text-zinc-900 mb-3 uppercase tracking-wider">Categories</h2>
             <nav className="flex flex-col gap-0.5" aria-label="Product categories">
-              {SIDEBAR.map(({ label, href, value }) => {
+              {[
+                { label: "All Products", href: "/products", value: null },
+                { label: "Electronics", href: "/electronics", value: "ELECTRONICS" },
+                { label: "Stationery", href: "/stationery", value: "STATIONERY" },
+                { label: "Software", href: "/software", value: "SOFTWARE" },
+              ].map(({ label, href, value }) => {
                 const isActive = value === "STATIONERY";
                 return (
                   <Link

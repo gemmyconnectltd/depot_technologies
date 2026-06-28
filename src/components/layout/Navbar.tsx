@@ -12,6 +12,7 @@ import SearchBar from "@/components/shared/SearchBar";
 const LINKS = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
+  { label: "Brands", href: "/brands" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

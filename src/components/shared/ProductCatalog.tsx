@@ -6,12 +6,14 @@ import { cn } from "@/lib/utils/cn";
 
 export default async function ProductCatalog({
   category,
+  brand,
   limit,
   featured,
   search,
   columns = 3,
 }: {
   category?: "STATIONERY" | "ELECTRONICS" | "SOFTWARE";
+  brand?: string;
   limit?: number;
   featured?: boolean;
   search?: string;
@@ -21,6 +23,7 @@ export default async function ProductCatalog({
     where: {
       active: true,
       ...(category && { category }),
+      ...(brand && { brand: { equals: brand, mode: "insensitive" } }),
       ...(featured && { featured: true }),
       ...(search && {
         OR: [

@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/shared/PageHero";
 import CTABanner from "@/components/shared/CTABanner";
 import HomeCategories from "@/components/home/HomeCategories";
+import HomeBrands from "@/components/home/HomeBrands";
 import ProductCatalog from "@/components/shared/ProductCatalog";
 import { ArrowRight } from "lucide-react";
 
@@ -26,6 +27,7 @@ export default function HomePage() {
         secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />
       <HomeCategories />
+      <HomeBrands />
       <section aria-label="Featured products" className="bg-zinc-50 py-8 px-6">
         <div className="mx-auto max-w-6xl">
           <div className="flex items-center justify-between mb-4">
