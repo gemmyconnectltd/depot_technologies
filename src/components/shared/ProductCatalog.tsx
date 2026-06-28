@@ -23,7 +23,7 @@ export default async function ProductCatalog({
     where: {
       active: true,
       ...(category && { category }),
-      ...(brand && { brand: { equals: brand, mode: "insensitive" } }),
+      ...(brand && { brand }),
       ...(featured && { featured: true }),
       ...(search && {
         OR: [

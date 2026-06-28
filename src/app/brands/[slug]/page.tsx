@@ -36,7 +36,7 @@ export default async function BrandPage({
   if (!brand) notFound();
 
   const count = await prisma.product.count({
-    where: { brand: { equals: brand.name, mode: "insensitive" }, active: true },
+    where: { brand: brand.name, active: true },
   });
 
   return (
