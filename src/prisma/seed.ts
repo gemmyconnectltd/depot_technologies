@@ -2190,9 +2190,9 @@ async function main() {
     const { image, imageAlt, ...data } = product;
     await prisma.product.upsert({
       where: { sku: data.sku },
-      update: data as never,
+      update: data as any,
       create: {
-        ...(data as never),
+        ...(data as any),
         images: {
           create: { url: image, alt: imageAlt, isPrimary: true, order: 0 },
         },
